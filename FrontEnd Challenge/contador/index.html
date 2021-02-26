@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Contador</title>
+</head>
+
+<body>
+
+    <!-- ======== Index ========  -->
+    <div class="indexContent">
+        <h1 class="greenText h1Index">Contador</h1>
+        <h3 class="h3Index">Informe uma data</h3>
+        <div>
+            <input type="datetime-local" placeholder="DD/MM/AAAA hh:mm">
+
+        </div>
+
+        <button onclick="startCount()">Iniciar contagem</button>
+    </div>
+    <!-- ======== Index ========  -->
+
+
+    <!-- ======== Contador ========  -->
+    <div class="countContent" style="display: none;">
+        <h3 class="greenText h3Countent">Contador</h3>
+        <button onclick="document.location.reload(true)">Reiniciar</button>
+        <div class="CountDown">
+            <h2 class="h2Countent">Faltam</h2>
+            <div class="timeCounter">
+
+                <ul>
+                    <li>
+                        <div class="contentCountDown days">
+                            2
+                        </div>
+                        <h6 class="greenText"> Dias </h6>
+                    </li>
+                    <li>
+                        <div class="contentCountDown hours">
+                            10
+                        </div>
+                        <h6 class="greenText">Horas</h6>
+                    </li>
+                    <li>
+                        <div class="contentCountDown mins">
+                            4
+                        </div>
+                        <h6 class="greenText">Minutos</h6>
+                    </li>
+                    <li>
+                        <div class="contentCountDown seconds">
+                            55
+                        </div>
+                        <h6 class="greenText">Segundos</h6>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- ======== Contador ========  -->
+
+    <script>
+        function startCount() {
+            let date = new Date(document.querySelector("input[type=datetime-local]").value).getTime()
+            let dateString = document.querySelector("input[type=datetime-local]").value
+            if (date < new Date().getTime()) {
+                alert(" Data Inserida Menor do que a Data Atual :( ")
+                throw "error"
+            } else {
+                fade(document.querySelector(".indexContent"))
+                setTimeout(() => {
+                    unfade(document.querySelector(".countContent"))
+                }, 1300)
+
+                calculateDifferenceBetweenDates(dateString)
+            }
+        }
+
+        function fade(element) {
+            var op = 1; // initial opacity
+            var timer = setInterval(function () {
+                if (op <= 0.1) {
+                    clearInterval(timer);
+                    element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+            }, 50);
+        }
+
+        function unfade(element) {
+            var op = 0.1; // initial opacity
+            element.style.display = 'block';
+            var timer = setInterval(function () {
+                if (op >= 1) {
+                    clearInterval(timer);
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op += op * 0.1;
+            }, 10);
+        }
+
+        function calculateDifferenceBetweenDates(dateSelected) {
+
+            let daysDiff = document.querySelector(".days")
+            let hours = document.querySelector(".hours")
+            let mins = document.querySelector(".mins")
+            let seconds = document.querySelector(".seconds")
+
+            let newDateSelected = dateSelected.replace("T", " ").split("-")
+
+            setInterval(() => {
+                var d1 = new Date(newDateSelected[0], newDateSelected[1], newDateSelected[2].split(" ")[0],
+                    newDateSelected[2].split(" ")[1].split(":")[0], newDateSelected[2].split(" ")[1].split(
+                        ":")[1], 0);
+                var d2 = new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate(),
+                    new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
+
+                var date = new Date(d1 - d2);
+                var hour = date.getUTCHours();
+                var min = date.getUTCMinutes();
+                var sec = date.getUTCSeconds();
+                var day = date.getUTCDate() - 1;
+
+
+                daysDiff.innerHTML = day
+                hours.innerHTML = hour
+                mins.innerHTML = min
+                seconds.innerHTML = sec
+
+
+            }, 1000)
+
+
+
+        }
+    </script>
+</body>
+
+</html>

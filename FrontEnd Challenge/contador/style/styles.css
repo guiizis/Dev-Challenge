@@ -1,0 +1,147 @@
+html {
+    height: 95%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #191A18;
+    height: 100%;
+}
+
+/* <!-- ======== Index ========  --> */
+
+body .h1Index {
+    font-size: 90px;
+    font-weight: bolder;
+    text-shadow: 0.25px 0.25px 0.25px rgba(0, 0, 0, 1);
+    margin-block-end: 0%;
+}
+
+body .h3Index {
+    color: #747572;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-block-start: 0.5%;
+}
+
+body .indexContent {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+body .indexContent input {
+
+    padding: 1.5% 3%;
+    border-radius: 2.5%;
+    background-color: rgba(47, 47, 47, 0.8);
+    color: #747572;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    border-width: 0px;
+    margin-bottom: 25px;
+}
+
+body .indexContent button {
+
+    padding: 0.6% 3%;
+    font-weight: bolder;
+    border-radius: 2.5%;
+    background-color: #21EB00;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+/* <!-- ======== /Index ========  --> */
+
+
+/* <!-- ======== count ========  --> */
+.countContent .h3Countent {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-block-start: 0.5%;
+    position: fixed;
+    top: 1%;
+    left: 1%;
+}
+
+body .countContent button {
+
+    padding: 0.6% 2%;
+    font-weight: bolder;
+    border-radius: 2.5%;
+    background-color: #21EB00;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    border-width: 0px;
+    cursor: pointer;
+    position: fixed;
+    top: 2.3%;
+    right: 1%;
+}
+
+body .countContent {
+    height: 100%;
+}
+
+.countContent .CountDown {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.countContent .h2Countent {
+    font-size: 100px;
+    font-weight: bolder;
+    margin-block-start: 0.5%;
+    color: rgba(47, 47, 47, 1);
+
+}
+
+.countContent ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.countContent ul li {
+    padding: 45px;
+    display: inline-block;
+}
+
+.countContent ul li h6 {
+
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.countContent ul li .contentCountDown {
+    font-size: 105px;
+    font-weight: 600;
+}
+
+
+/* < !--======== /count ========--> */
+
+
+.greenText {
+    color: #21EB00;
+
+}
+
+.textAlignCenter {
+    text-align: center;
+}
