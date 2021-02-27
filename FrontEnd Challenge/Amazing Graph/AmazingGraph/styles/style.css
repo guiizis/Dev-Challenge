@@ -1,0 +1,90 @@
+html,
+body {
+    height: 95%;
+    width: 95%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+body div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-nav {
+    margin-top: 3%;
+    display: flex;
+}
+
+.top-nav ul {
+    list-style-type: none;
+    position: fixed;
+    right: 5%;
+    top: 10%;
+}
+
+
+.top-nav h1 {
+    position: fixed;
+    left: 5%;
+    top: 7%;
+    text-shadow: 0.15px 0.15px 0.15px rgba(0, 0, 0, 1);
+}
+
+
+.top-nav ul li {
+    display: inline-block;
+    min-height: 2%;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+
+/* // IMG  */
+
+body .divPic {
+    height: 100%;
+}
+
+.divPic #imgTeam {
+    position: relative;
+    left: 55%;
+    top: 20%;
+    width: 850px;
+    height: 550px;
+    background-image: url("../assets/team.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* // IMG  */
+
+
+body .img-text {
+    position: relative;
+    left: 5%;
+    bottom: 55%;
+
+
+}
+
+.orange-text {
+    color: Orange;
+}
+
+.large-text {
+    font-size: 45px;
+}
+
+.medium-text {
+    font-size: 35px;
+}
+
+.gray-text {
+    color: #766F68;
+    font-family: 'Roboto', sans-serif;
+
+}
