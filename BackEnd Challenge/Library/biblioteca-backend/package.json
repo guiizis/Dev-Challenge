@@ -1,0 +1,16 @@
+{
+  "name": "dev-challenge-library",
+  "version": "1.0.0",
+  "description": "<br />\r <p align=\"center\">\r     <img src=\"https://i.pinimg.com/originals/dd/64/da/dd64da585bc57cb05e5fd4d8ce873f57.png\" alt=\"Logo\" width=\"200\">",
+  "main": "src/server/server.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "4.16.2"
+  }
+}
